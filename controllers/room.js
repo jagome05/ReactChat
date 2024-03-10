@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const Room = require("../model/Room")
+const admin = require('../middleware/isAdmin')
 
 // Endpoint to display all rooms
 router.get('/all', async (req, res) => {
@@ -48,7 +49,7 @@ router.post("/new", async (req, res) => {
 });
 
 // Endpoint to update a room by ID
-router.put("/:roomId", async (req, res) => {
+router.put("/:roomId", admin, async (req, res) => {
     const { name, description, addedUsers } = req.body;
     const roomId = req.params.roomId;
 
@@ -71,7 +72,7 @@ router.put("/:roomId", async (req, res) => {
 });
 
 // Endpoint to delete a room by ID
-router.delete("/:roomId", async (req, res) => {
+router.delete("/:roomId", admin, async (req, res) => {
     const roomId = req.params.roomId;
 
     try {
@@ -87,7 +88,5 @@ router.delete("/:roomId", async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
-
-module.exports = router;
 
 module.exports = router;
