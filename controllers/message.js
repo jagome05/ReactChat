@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const mongoose = require('mongoose')
 const { dbConnect } = require('../db')
+const admin = require('../middleware/isAdmin')
 
 const Message = require('../model/Message')
 
@@ -44,7 +45,7 @@ router.post('/postMessage', async (req, res) => {
 })
 
 //*PUT Req
-router.put('/updateMessage/:id', async (req,res) => {
+router.put('/updateMessage/:id', admin, async (req,res) => {
   // find by ObjectId using params
   const findMessage = await Message.findOne({_id: req.params.id})
 
@@ -58,7 +59,7 @@ router.put('/updateMessage/:id', async (req,res) => {
 })
 
 //*DELETE Req
-router.delete('/deleteMessage/:id', async (req,res) => {
+router.delete('/deleteMessage/:id', admin, async (req,res) => {
   // find by ObjectId using params
   const findMessage = await Message.findOne({_id: req.params.id})
   await findMessage.deleteOne()
