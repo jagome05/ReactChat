@@ -8,10 +8,10 @@ const JWT_KEY = process.env.JWT_KEY;
 // Registration route
 router.post('/register', async (req, res) => {
     // Extracting user input from the request body
-    let { firstname, lastname, email, password } = req.body
+    let { firstname, lastname, email, password, isAdmin } = req.body
     try {
      // Creating a new user with hashed password
-        let newUser = new User({ firstname, lastname, email, password: bcrypt.hashSync(password, SALT) })
+        let newUser = new User({ firstname, lastname, email, password: bcrypt.hashSync(password, SALT), isAdmin })
         await newUser.save()
 
         // Sending a successful response with the newly created user
@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     try {
         const userId = req.params.id;
-        const { firstname, lastname, email, password } = req.body;
+        const { firstname, lastname, email, password, isAdmin } = req.body;
 
         // Check if the user exists
         const userToUpdate = await User.findById(userId);
@@ -68,6 +68,7 @@ router.put('/update/:id', async (req, res) => {
         userToUpdate.lastname = lastname;
         userToUpdate.email = email;
         userToUpdate.password = bcrypt.hashSync(password, SALT); // Update hashed password
+        userToUpdate.isAdmin = isAdmin;
 
         // Save the updated user
         await userToUpdate.save();
