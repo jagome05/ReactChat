@@ -41,10 +41,10 @@ export default function MessageLayout({ active }) {
   //this returns how the messages our dispalyed
   return (
     <>
-      <div>
+      <div className="message-layout">
         {msgInfo.map((index) => (
           <div key={index._id} className={`message-chat`}>
-            <h2>{index.authorName}</h2>
+            <h2 className="author-name">{index.authorName}:</h2>
             <h3>
               {index.body} <span className="timestamp">{index.timestamp}</span>
             </h3>

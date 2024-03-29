@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import MessageBar from "./MessageBar";
 import MessageLayout from "./MessageLayout";
 
-//accepts the props active to see which room is active
 export default function Chatroom({ active, setActive }) {
   let currentRoom = active;
   let currentRoomURL = `http://localhost:4000/room/${currentRoom}`;
   let [roomInfo, setRoomInfo] = useState("");
 
-  //useEffect to grab API call for active room
   useEffect(() => {
     async function grabCurrentRoom() {
       try {
@@ -23,15 +21,17 @@ export default function Chatroom({ active, setActive }) {
     grabCurrentRoom();
   }, [active]);
 
-  let { name } = roomInfo;
+  let { name, description } = roomInfo;
 
-  //this returns layout for the chat messages
   return (
     <>
+      <div className="chat-header">
+        <h2 className="room-name">{name}</h2>
+        <p className="room-description">{description}</p>{" "}
+      </div>
       <div className="chatRoom">
-        <h2>{name}</h2>
+        {/* Render room description */}
         <MessageLayout active={active} />
-        <MessageBar active={active} />
       </div>
     </>
   );

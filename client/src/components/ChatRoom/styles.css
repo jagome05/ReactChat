@@ -1,54 +1,118 @@
 .chatWrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "select chat chat"
-    "ad     chat chat";
+  display: flex;
+}
+
+h1 {
+  font-size: 20px;
 }
 
 .chatSelect {
   display: flex;
   flex-direction: column;
+  align-self: baseline;
   background-color: rgb(255, 252, 37);
   border: 3px solid black;
-  padding: 0.5em;
-  margin: 3em;
-  height: 75vh;
-}
-
-.button-layout {
-  display: flex;
-  flex-direction: column;
-  height: 75vh;
-}
-
-.room-button {
-  height: 4vh;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 1em;
+  padding: 0.5em;
+  margin: 2em;
+  width: 15%;
 }
 
 .chatRoom {
-  grid-area: chat;
-  display: flex;
-  flex-direction: column;
   background-color: rgb(0, 106, 255);
   border: 3px solid black;
-  padding: 0.5em;
+  width: 77%;
+  margin-top: 4.5em;
+}
+
+.button-layout {
+  padding: 0.3em;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  margin: 0.2em;
+}
+
+.home-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3em;
+  border: 1px solid #ccc;
+  border-radius: 100px;
   margin: 1em;
-  /* height: 500px; */
+}
+
+.create-room-box {
+  margin-top: 2em;
+}
+
+.create-room-button {
+  padding: 0.3em;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.create-room-input {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+}
+
+.chat-header {
+  margin-left: 16.5em;
+  position: absolute;
+}
+.room-name {
+  margin-top: 1em;
+  color: black;
+  font-size: 20px;
+}
+
+.room-description {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: -1.5em;
+}
+
+.message-layout {
 }
 
 .message-chat {
-  background-color: white;
-  border: 3px solid black;
+  height: 15%;
+  margin-bottom: 0.5em;
 }
 
 .messageContainer {
-  align-self: flex-end;
+  margin-left: 17em;
+}
+
+.send-name {
+  color: black;
+}
+
+.timestamp {
+  font-size: 12px;
+}
+
+h3 {
+  margin: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.author-name {
+  margin: 0;
+  font-size: 20px;
+}
+
+.send {
+  padding: 0.3em;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  margin-left: 0.5em;
 }

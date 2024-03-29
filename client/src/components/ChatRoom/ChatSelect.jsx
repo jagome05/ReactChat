@@ -49,12 +49,25 @@ export default function ChatSelect({ active, setActive }) {
     setActive(result);
   }
 
+  function handleGoHome() {
+    setActive(null); // Set active chat room to null to indicate leaving the room
+  }
+
   return (
     <>
       <div className="chatSelect">
+        {/* Home button */}
         <h1>Available Chats</h1>
+        <button className="home-button" onClick={handleGoHome}>
+          Home
+        </button>
         {listRooms.map((room) => (
-          <button key={room._id} onClick={handleOnClick} value={room._id}>
+          <button
+            className="button-layout"
+            key={room._id}
+            onClick={handleOnClick}
+            value={room._id}
+          >
             {room.name}
           </button>
         ))}{" "}
@@ -75,6 +88,11 @@ export default function ChatSelect({ active, setActive }) {
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)} // Update description state on input change
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleCreateRoom();
+              }
+            }}
           />
           {/* Submit button for creating room */}
           <button className="create-room-button" type="submit">

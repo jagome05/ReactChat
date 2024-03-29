@@ -46,17 +46,24 @@ export default function MessageBar({ active }) {
   return (
     <>
       <div className="messageContainer">
-        <h3>{userInfo.firstname}</h3>
+        <h3 className="send-name">{userInfo.firstname}</h3>
         <input
           type="text"
           value={body} // Control input value with state
           onChange={(e) => {
             setBody(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSend();
+            }
+          }}
           placeholder="send a message"
           name="body"
         />
-        <button onClick={handleSend}>Send</button>
+        <button className="send" onClick={handleSend}>
+          Send
+        </button>
       </div>
     </>
   );

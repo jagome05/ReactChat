@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ChatSelect from "./ChatRoom/ChatSelect";
 import ChatRoom from "./ChatRoom/ChatRoom";
 import "./ChatRoom/styles.css";
+import MessageBar from "./ChatRoom/MessageBar";
 
 function Home() {
   let [roomActive, setRoomActive] = useState("");
@@ -13,6 +14,7 @@ function Home() {
           <ChatSelect active={roomActive} setActive={setRoomActive} />
           <ChatRoom active={roomActive} setActive={setRoomActive} />
         </div>
+        <MessageBar active={roomActive} setActive={setRoomActive} />
       </>
     );
   }
