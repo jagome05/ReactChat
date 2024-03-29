@@ -15,12 +15,11 @@ Clone the following repository to your projects folder, then `cd` into `server` 
 Your message document in your `messages` collection should resemble the following:
 
 ```json
-
 {
-    "when": "2018-07-15T20:00:47.696Z",
-    "user": "John",
-    "room": "Main",
-    "body": "I really want to attend NASA's DEVELOP program this summer!"
+  "when": "2018-07-15T20:00:47.696Z",
+  "user": "John",
+  "room": "Main",
+  "body": "I really want to attend NASA's DEVELOP program this summer!"
 }
 
 ```
@@ -32,10 +31,10 @@ Your user document in your `users` collection should resemble the following:
 ```json
 
 {
-    "firstName": "John",
-    "lastName": "Wick",
-    "email": "jwick@puppyfinder.com",
-    "password": "focusCommitment1979"
+  "firstName": "John",
+  "lastName": "Wick",
+  "email": "jwick@puppyfinder.com",
+  "password": "focusCommitment1979"
 }
 
 ```
@@ -45,22 +44,21 @@ Your user document in your `users` collection should resemble the following:
 Your room document in your `rooms` collection should resemble the following:
 
 ```json
-
 {
-    "name": "Continental",
-    "description": "No business conducted",
-    "addedUsers": ["John Wick", "Winston", "Ms. Perkins"]
+  "name": "Continental",
+  "description": "No business conducted",
+  "addedUsers": ["John Wick", "Winston", "Ms. Perkins"]
 }
-
 ```
+
 > HINT
 > `user`, `room`, and `addedUsers` refer to connection between users and their room and messages.
-> It's usually a good idea to utilize _id's to reference those.
+> It's usually a good idea to utilize \_id's to reference those.
+
 
 ## Stories
 
 ### Users
-
 
 - [ ] Create user endpoint -John
 - [ ] Login user endpoint -John
@@ -88,5 +86,6 @@ As this is a group project, it would be much easier to work on it if everyone ha
 
 > HINT
 > Allowing updates on users means that collection associations need to be based on things user **CANNOT** change.
+
 
 - [ ] Add isAdmin to your user collection and build middleware that only allows admins to update and delete rooms and messages.

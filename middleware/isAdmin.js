@@ -1,0 +1,24 @@
+const { dbConnect } = require("../db");
+const mongoose = require("mongoose");
+const User = require("../model/Users");
+
+//* Middleware fxn for seeing if user is admin
+const adminRulez = async (req, res, next) => {
+  // using authorization tab in postman
+  // --> Type: API Key; Key: email; Value: {user's email}
+  const email = req.query;
+
+  // * finds user by email
+  const foundUser = await User.findOne(email);
+
+  // *once user is found tests to see if isAdmin is tru or false
+  if (foundUser.isAdmin) {
+    next();
+  } else {
+    res.status(500).json({
+      message: "NO PASSAGE ALLOWED!",
+    });
+  }
+};
+
+module.exports = adminRulez;
