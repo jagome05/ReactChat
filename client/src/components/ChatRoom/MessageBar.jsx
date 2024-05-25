@@ -48,6 +48,7 @@ export default function MessageBar({ active }) {
       <div className="messageContainer">
         <h3 className="send-name">{userInfo.firstname}</h3>
         <input
+        className="create-room-input"
           type="text"
           value={body} // Control input value with state
           onChange={(e) => {

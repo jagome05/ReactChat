@@ -13,8 +13,8 @@ function Home() {
         <div className="chatWrapper">
           <ChatSelect active={roomActive} setActive={setRoomActive} />
           <ChatRoom active={roomActive} setActive={setRoomActive} />
+          <MessageBar active={roomActive} setActive={setRoomActive} />
         </div>
-        <MessageBar active={roomActive} setActive={setRoomActive} />
       </>
     );
   }

@@ -1,5 +1,13 @@
 .chatWrapper {
-  display: flex;
+  margin: 2em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 20em;
+  grid-template-areas: 
+  "select  room  room  room  room"
+  "select  room  room  room  room"
+  ".       room  room  room  room"
+  ".       bar   bar   bar   bar";
 }
 
 h1 {
@@ -7,23 +15,43 @@ h1 {
 }
 
 .chatSelect {
+  grid-area: select;
   display: flex;
   flex-direction: column;
-  align-self: baseline;
   background-color: rgb(255, 252, 37);
   border: 3px solid black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 0.5em;
-  margin: 2em;
-  width: 15%;
+}
+
+.ChatLayout {
+  grid-area: room;
+  background-color: rgba(128, 128, 128, 0.459);
+  border: black 3px solid;
+  border-radius: 5px;
 }
 
 .chatRoom {
   background-color: rgb(0, 106, 255);
-  border: 3px solid black;
-  width: 77%;
-  margin-top: 4.5em;
+  border: 2px solid black;
+  margin: 1em;
+  padding: 1em;
+}
+
+.chat-header {
+  margin: 1em;
+}
+
+.room-name {
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.room-description {
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .button-layout {
@@ -63,22 +91,6 @@ h1 {
   border-radius: 100px;
 }
 
-.chat-header {
-  margin-left: 16.5em;
-  position: absolute;
-}
-.room-name {
-  margin-top: 1em;
-  color: black;
-  font-size: 20px;
-}
-
-.room-description {
-  font-size: 12px;
-  font-weight: 400;
-  margin-top: -1.5em;
-}
-
 .message-layout {
 }
 
@@ -88,7 +100,12 @@ h1 {
 }
 
 .messageContainer {
-  margin-left: 17em;
+  grid-area: bar;
+  background-color: rgba(128, 128, 128, 0.637);
+  width: 50%;
+  border: black solid 2px;
+  padding: 0.5em;
+  border-radius: 5px;
 }
 
 .send-name {

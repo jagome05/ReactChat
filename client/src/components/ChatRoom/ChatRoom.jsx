@@ -25,6 +25,7 @@ export default function Chatroom({ active, setActive }) {
 
   return (
     <>
+    <div className="ChatLayout">
       <div className="chat-header">
         <h2 className="room-name">{name}</h2>
         <p className="room-description">{description}</p>{" "}
@@ -33,6 +34,7 @@ export default function Chatroom({ active, setActive }) {
         {/* Render room description */}
         <MessageLayout active={active} />
       </div>
+    </div>
     </>
   );
 }
