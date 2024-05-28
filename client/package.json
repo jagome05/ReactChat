@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jagome05.github.io/ReactChat",
+  "homepage": "https://jasongomez.dev/ReactChat",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
