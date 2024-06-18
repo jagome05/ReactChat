@@ -12,6 +12,33 @@ img {
   margin-right: auto;
 }
 
+.header-button {
+  padding: 10px;
+  background-color: #b3b3b3;
+  color: black;
+  border: black 2px solid;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.register-text {
+  padding: 10px;
+  margin: 10px
+}
+
+.reg-buttons {
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
 .login-container {
   display: flex;
   justify-content: center;

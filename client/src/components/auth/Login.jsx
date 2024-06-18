@@ -66,8 +66,8 @@ function Login() {
           Login
         </button>
 
-        <div>
-          Don't have an account? <Link to="register">Signup</Link>
+        <div className="register-text">
+          Don't have an account? <Link className="reg-buttons" to="register">Signup</Link>
         </div>
       </div>
     </div>

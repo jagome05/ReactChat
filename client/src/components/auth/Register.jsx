@@ -128,8 +128,8 @@ function Register() {
             Register
           </button>
         </form>
-        <div>
-          Already have an account? <Link to="/users">Login</Link>
+        <div className="register-text">
+          Already have an account? <Link className="reg-buttons" to="/users">Login</Link>
         </div>
       </div>
     </div>

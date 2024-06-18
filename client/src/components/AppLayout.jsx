@@ -25,7 +25,7 @@ function AppLayout() {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <NavLink to="users">Login</NavLink>
+          <NavLink className="header-button" to="users">Login</NavLink>
         )}
       </header>
       <main>
