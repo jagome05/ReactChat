@@ -2,13 +2,13 @@
   "name": "react-chat",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "setup": "npm install && cd client && npm install",
     "dev": "nodemon",
-    "vercel": "vercel dev --cwd C:/Users/knigh/Upright/ptsb-dec-2023/Projects/react-chat-johnjason"
+    "vercel": "vercel dev"
   },
   "keywords": [],
   "author": "",
