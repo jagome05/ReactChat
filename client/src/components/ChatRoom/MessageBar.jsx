@@ -4,7 +4,9 @@ export default function MessageBar({ active }) {
   //! make sure to update with john's logged in user
   let [room, setRoom] = useState("");
   let [userInfo, setUserInfo] = useState({});
-  let [author, setAuthor] = useState("");
+  let [author, setAuthor] = useState(
+    {firstname: "author"}
+  );
   let [body, setBody] = useState("");
 
   // todo this will be used for updating the room and autthor for POST req
@@ -17,6 +19,7 @@ export default function MessageBar({ active }) {
 
   //this fxn handles the POST request when message is send
   function handleSend() {
+
     fetch("http://localhost:4000/api/postMessage", {
       method: "POST",
       headers: {
@@ -46,7 +49,7 @@ export default function MessageBar({ active }) {
   return (
     <>
       <div className="messageContainer">
-        <h3 className="send-name">{userInfo.firstname}</h3>
+        <h3 className="send-name">{userInfo ? userInfo.firstname : "guest"}</h3>
         <input
         className="create-room-input"
           type="text"

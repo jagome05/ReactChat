@@ -51,7 +51,7 @@ router.post("/postMessage", async (req, res) => {
   const _id = new mongoose.Types.ObjectId();
 
   let authorInfo = await Users.findById(author);
-  let authorName = authorInfo.firstname;
+  let authorName = (authorInfo ? authorInfo.firstname : "guest")
 
   //* makes new message from req.body + timestamp
   const newMessage = new Message({
