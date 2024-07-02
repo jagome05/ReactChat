@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "setup": "npm install && cd client && npm install",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "vercel": "vercel dev --cwd C:/Users/knigh/Upright/ptsb-dec-2023/Projects/react-chat-johnjason"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^4.4.1",
     "mongoose": "^6.13.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "vercel": "^34.2.8"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
