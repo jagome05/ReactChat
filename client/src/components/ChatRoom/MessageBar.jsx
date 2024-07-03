@@ -21,7 +21,7 @@ export default function MessageBar({ active }) {
   //this fxn handles the POST request when message is send
   function handleSend() {
 
-    fetch`(${BASE_URL}/api/postMessage`, {
+    fetch(`${BASE_URL}/api/postMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
