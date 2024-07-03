@@ -1,16 +1,17 @@
 import React, { useEffect, useState, useCallback } from "react";
+const BASE_URL = process.env.BASE_URL
 
 export default function ChatSelect({ active, setActive }) {
   const [listRooms, setListRooms] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const mongoDB = "http://localhost:4000/room/all";
+  const mongoDB = `${BASE_URL}/room/all`;
 
   const handleCreateRoom = useCallback(
     async (e) => {
       e.preventDefault();
       try {
-        const res = await fetch("http://localhost:4000/room/new", {
+        const res = await fetch(`${BASE_URL}/room/new`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

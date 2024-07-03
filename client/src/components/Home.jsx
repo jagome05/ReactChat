@@ -1,3 +1,4 @@
+require("dotenv").config();
 import React, { useState } from "react";
 import ChatSelect from "./ChatRoom/ChatSelect";
 import ChatRoom from "./ChatRoom/ChatRoom";

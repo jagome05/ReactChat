@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const BASE_URL = process.env.BASE_URL
 
 export default function MessageBar({ active }) {
   //! make sure to update with john's logged in user
@@ -20,7 +21,7 @@ export default function MessageBar({ active }) {
   //this fxn handles the POST request when message is send
   function handleSend() {
 
-    fetch("http://localhost:4000/api/postMessage", {
+    fetch`(${BASE_URL}/api/postMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

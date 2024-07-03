@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import MessageBar from "./MessageBar";
 import MessageLayout from "./MessageLayout";
+const BASE_URL = process.env.BASE_URL
 
 export default function Chatroom({ active, setActive }) {
   let currentRoom = active;
-  let currentRoomURL = `http://localhost:4000/room/${currentRoom}`;
+  let currentRoomURL = `${BASE_URL}/room/${currentRoom}`;
   let [roomInfo, setRoomInfo] = useState("");
 
   useEffect(() => {

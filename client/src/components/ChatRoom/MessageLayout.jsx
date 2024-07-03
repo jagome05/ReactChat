@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+const BASE_URL = process.env.BASE_URL;
 
 export default function MessageLayout({ active }) {
   let [msgInfo, setMsgInfo] = useState([]);
@@ -12,7 +13,7 @@ export default function MessageLayout({ active }) {
   useEffect(() => {
     async function grabAllMessages() {
       try {
-        let res = await fetch("http://localhost:4000/api/allMessages");
+        let res = await fetch(`${BASE_URL}/api/allMessages`);
         let data = await res.json();
         let matchRoom = data.messages;
         let results = matchRoom.filter((index) => index.room === active);

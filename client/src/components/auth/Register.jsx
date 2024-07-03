@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TOKEN_KEY } from "../../constants";
+const BASE_URL = process.env.BASE_URL
 
 function Register() {
   const [firstname, setFirstName] = useState("");
@@ -23,7 +24,7 @@ function Register() {
       adminCode, // Include isAdmin status in the request body
     };
 
-    fetch("http://localhost:4000/users/register", {
+    fetch(`${BASE_URL}/users/register`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

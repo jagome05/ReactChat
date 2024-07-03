@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { TOKEN_KEY } from "../../constants";
 import { Link, useNavigate } from "react-router-dom";
+const BASE_URL = process.env.BASE_URL
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    fetch("http://localhost:4000/users/login", {
+    fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
